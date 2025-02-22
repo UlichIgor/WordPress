@@ -4,12 +4,15 @@
 	<div class="container">
 		<div class="main-title">
 			<?php the_field('main-title') ?>
+			<!-- Выводит значение пользовательского поля 'main-title' из ACF -->
 		</div>
 		<div class="main__text">
 			<?php the_field('main__text') ?>
+			<!-- Выводит значение пользовательского поля 'main__text' из ACF -->
 		</div>
 		<div class="main__img">
 			<img src="<?php bloginfo('template_url'); ?>/assets/images/opilcki-logo.png" alt="photo">
+			<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 		</div>
 		<div class="project">
 			<div class="project__title">
@@ -31,9 +34,11 @@
 				<div class="project__images">
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home1.jpg" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home1-drawing.png" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 				</div>
 			</div>
@@ -53,9 +58,11 @@
 				<div class="project__images">
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home2.jpg" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home2-drawing.png" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 				</div>
 			</div>
@@ -75,9 +82,11 @@
 				<div class="project__images">
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home3.jpg" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 					<div class="project__images-item">
 						<img src="<?php bloginfo('template_url'); ?>/assets/images/home3-drawing.png" alt="photo">
+						<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 					</div>
 				</div>
 			</div>
@@ -85,21 +94,26 @@
 	</div>
 	<div class="download">
 		<img src="<?php bloginfo('template_url'); ?>/assets/images/home-catalog.png" alt="photo">
+		<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 		<a href="#">СКАЧАТЬ ВЕСЬ КАТАЛОГ ДОМОВ</a>
 	</div>
 	<div class="container">
 		<div class="gallery">
 			<div class="gallery__title">
 				<?php the_field('gallery__title') ?>
+				<!-- Выводит значение пользовательского поля 'gallery__title' из ACF -->
 			</div>
 			<div class="gallery__text">
 				<?php the_field('gallery__text') ?>
+				<!-- Выводит значение пользовательского поля 'gallery__text' из ACF -->
 			</div>
 			<div class="gallery__inner">
 				<?php the_field('gallery__inner') ?>
+				<!-- Выводит значение пользовательского поля 'gallery__inner' из ACF -->
 			</div>
 			<div class="main__img">
 				<img src="<?php bloginfo('template_url'); ?>/assets/images/opilcki-logo.png" alt="photo">
+				<!-- Выводит URL директории шаблона и добавляет путь к изображению -->
 			</div>
 		</div>
 	</div>
