@@ -1,4 +1,5 @@
-```html
+// Purpose: The main template file
+//
 <?php get_header(); ?>
 <!-- Подключает файл шаблона header.php (шапку сайта) -->
 <main class="main">
@@ -121,4 +122,4 @@
 </main>
 <!-- Подключение футера сайта -->
 <?php get_footer(); ?>
-```
+

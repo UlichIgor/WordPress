@@ -1,4 +1,5 @@
-```html
+// Template Name: Шапка
+// Template Post Type: page
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,4 +36,4 @@
 	</header>
 </body>
 </html>
-```
+
