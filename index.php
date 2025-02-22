@@ -1,3 +1,4 @@
+```html
 <?php get_header(); ?>
 <!-- Подключает файл шаблона header.php (шапку сайта) -->
 <main class="main">
@@ -101,15 +102,15 @@
 		<div class="gallery">
 			<div class="gallery__title">
 				<?php the_field('gallery__title') ?>
-				<!-- Выводит значение пользовательского поля 'gallery__title' из ACF -->
+				<!-- Выводит значение пользовательского поля 'gallery__title'  -->
 			</div>
 			<div class="gallery__text">
 				<?php the_field('gallery__text') ?>
-				<!-- Выводит значение пользовательского поля 'gallery__text' из ACF -->
+				<!-- Выводит значение пользовательского поля 'gallery__text' -->
 			</div>
 			<div class="gallery__inner">
 				<?php the_field('gallery__inner') ?>
-				<!-- Выводит значение пользовательского поля 'gallery__inner' из ACF -->
+				<!-- Выводит значение пользовательского поля 'gallery__inner' -->
 			</div>
 			<div class="main__img">
 				<img src="<?php bloginfo('template_url'); ?>/assets/images/opilcki-logo.png" alt="photo">
@@ -120,3 +121,4 @@
 </main>
 <!-- Подключение футера сайта -->
 <?php get_footer(); ?>
+```
