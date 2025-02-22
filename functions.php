@@ -10,6 +10,7 @@ function timber_style() {
 }
 
 function timber_scripts() {
+	// Подключение скриптов
 	wp_enqueue_script('jquery-script', get_template_directory_uri() . '/assets/js/jquery-1.11.3.min.js', array(), null, true);
 	wp_enqueue_script('magnific-script', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), null, true);
 	wp_enqueue_script('libs-script', get_template_directory_uri() . '/assets/js/libs.min.js', array('jquery'), null, true);

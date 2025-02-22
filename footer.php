@@ -1,7 +1,8 @@
-
 <footer class="footer">
 	<div class="container">
+		<!-- Ссылка на телефон, номер телефона берется из поля 'phone' -->
 		<a class="phone" href="tel:<?php the_field('phone') ?>"><?php the_field('phone') ?></a>
+		<!-- Электронная почта, берется из поля 'footer__email' -->
 		<div class="footer__email"><?php the_field('footer__email') ?></div>
 	</div>
 </footer>
