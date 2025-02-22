@@ -1,4 +1,4 @@
-```php
+
 <footer class="footer">
 	<div class="container">
 		<a class="phone" href="tel:<?php the_field('phone') ?>"><?php the_field('phone') ?></a>
@@ -9,4 +9,4 @@
 <!-- Подключение скриптов. Запускает хук wp_footer — один из основных хуков, без которого не будут работать многие плагины. Вызывается в подвале темы, в файле footer.php. -->
 </body>
 </html>
-````
+
