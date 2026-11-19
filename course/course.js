@@ -19,3 +19,27 @@ area.querySelectorAll('[data-answer]').forEach(btn=>btn.addEventListener('click'
 $('#prev').addEventListener('click',()=>{state.current--;render()});$('#next').addEventListener('click',()=>{state.current++;render()});$('#complete').addEventListener('click',()=>{state.done.add(state.current);save();render()});renderNav();progress();}
 $('#reset-progress').addEventListener('click',()=>{if(confirm('Скинути весь збережений прогрес курсу?')){state.done.clear();state.tasks={};save();render()}});
 render();
+
+const finalQuestions=[
+["Який файл теми зазвичай містить функції та реєстрацію хуків?",["index.php","functions.php","footer.php"],1,"functions.php містить функціональність теми."],
+["Для чого потрібен get_header()?",["Підключає header.php","Підключає style.css","Створює меню"],0,"get_header() підключає файл header.php."],
+["Де має бути wp_head()?",["Перед </head>","Перед </body>","У functions.php"],0,"wp_head() має бути у head перед його закриттям."],
+["Що робить wp_footer()?",["Виводить назву теми","Запускає хук у підвалі сторінки","Підключає базу даних"],1,"wp_footer() запускає хук для скриптів та інших ресурсів перед </body>."],
+["Яка функція додає CSS у чергу WordPress?",["wp_enqueue_style()","the_field()","get_footer()"],0,"Для CSS використовують wp_enqueue_style()."],
+["Що повертає get_field('phone')?",["Значення поля ACF","URL теми","Об'єкт меню"],0,"get_field() повертає значення ACF-поля."],
+["Яка функція екранує URL?",["esc_html()","esc_attr()","esc_url()"],2,"esc_url() призначена для безпечного виведення URL."],
+["Що повертає get_stylesheet_uri()?",["URL активного style.css","URL адмінки","Назву теми"],0,"get_stylesheet_uri() повертає URL таблиці стилів активної теми."],
+["Чи виконує GitHub Pages PHP-код?",["Так, завжди","Ні, лише статичні файли","Лише functions.php"],1,"GitHub Pages — статичний хостинг, PHP там не виконується."],
+["Що слід зробити перед релізом теми?",["Лише запушити файли","Видалити footer.php","Перевірити на тестовій інсталяції WordPress"],2,"Реальну роботу PHP-шаблонів потрібно перевірити на встановленому WordPress."]
+];
+function renderExam(){
+ const host=document.querySelector('#final-exam');if(!host)return;
+ host.innerHTML='<div class="lesson-kicker">ПІДСУМКОВА АТЕСТАЦІЯ</div><h2>Фінальний тест</h2><p class="lesson-intro">10 запитань за матеріалами курсу. Для успішного завершення потрібно набрати щонайменше 8 правильних відповідей.</p><form id="exam-form">'+finalQuestions.map((q,i)=>'<fieldset class="exam-question"><legend>'+(i+1)+'. '+q[0]+'</legend>'+q[1].map((a,k)=>'<label class="exam-option"><input type="radio" name="exam-'+i+'" value="'+k+'"> '+a+'</label>').join('')+'</fieldset>').join('')+'<button class="action-button" type="submit">Перевірити відповіді</button></form><div id="exam-result" class="exam-result" aria-live="polite"></div>';
+ document.querySelector('#exam-form').addEventListener('submit',e=>{
+  e.preventDefault();let score=0;const review=[];
+  finalQuestions.forEach((q,i)=>{const selected=host.querySelector('input[name="exam-'+i+'"]:checked');const value=selected?Number(selected.value):-1;const ok=value===q[2];if(ok)score++;review.push('<li><strong>'+(i+1)+'. '+(ok?'Правильно':'Потрібно повторити')+'</strong> — '+q[3]+'</li>');});
+  const passed=score>=8;document.querySelector('#exam-result').innerHTML='<h3>'+score+' / 10 — '+(passed?'Тест складено!':'Спробуй ще раз')+'</h3><p>'+(passed?'Вітаємо! Ти засвоїв основи створення WordPress-теми.':'Потрібно набрати щонайменше 8 балів. Переглянь пояснення та повтори тест.')+'</p><ol>'+review.join('')+'</ol>';
+  document.querySelector('#exam-result').scrollIntoView({behavior:'smooth',block:'nearest'});
+ });
+}
+renderExam();
