@@ -1,6 +1,9 @@
 <?php
 /**
- * Підключення стилів і скриптів теми.
+ * Підключення стилів теми.
+ *
+ * У репозиторії поки немає файлів JavaScript із попередніх шляхів assets/js/.
+ * Не додаємо відсутні файли до черги, щоб не створювати 404-запити.
  */
 
 add_action( 'wp_enqueue_scripts', 'wordpress_learning_theme_assets' );
@@ -8,41 +11,11 @@ add_action( 'wp_enqueue_scripts', 'wordpress_learning_theme_assets' );
 function wordpress_learning_theme_assets() {
     $theme_version = wp_get_theme()->get( 'Version' );
 
-    // Основна таблиця стилів теми.
     wp_enqueue_style(
         'wordpress-learning-theme-style',
         get_stylesheet_uri(),
         array(),
         $theme_version
-    );
-
-    // Використовуємо вбудовану бібліотеку jQuery WordPress.
-    wp_enqueue_script( 'jquery' );
-
-    // Додаткові бібліотеки теми.
-    wp_enqueue_script(
-        'magnific-popup',
-        get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js',
-        array( 'jquery' ),
-        $theme_version,
-        true
-    );
-
-    wp_enqueue_script(
-        'theme-libs',
-        get_template_directory_uri() . '/assets/js/libs.min.js',
-        array( 'jquery' ),
-        $theme_version,
-        true
-    );
-
-    // Основний JavaScript теми.
-    wp_enqueue_script(
-        'wordpress-learning-theme-main',
-        get_template_directory_uri() . '/assets/js/main.js',
-        array( 'jquery', 'magnific-popup', 'theme-libs' ),
-        $theme_version,
-        true
     );
 }
 
