@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Інтерактивний практичний курс зі створення тем WordPress на основі навчального репозиторію UlichIgor/WordPress.">
+  <meta name="theme-color" content="#101827">
+  <title>WordPress — інтерактивний курс</title>
+  <link rel="stylesheet" href="./course.css">
+  <script src="./course.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="WordPress курс — на початок"><span class="brand-mark">W</span><span>WP<span class="brand-muted">.ACADEMY</span></span></a>
+    <div class="top-progress"><span id="progress-label">0% завершено</span><div class="progress-track"><span id="progress-fill"></span></div></div>
+    <a class="repo-link" href="https://github.com/UlichIgor/WordPress" target="_blank" rel="noreferrer">Репозиторій ↗</a>
+  </header>
+  <main id="top" class="layout">
+    <aside class="sidebar">
+      <div class="side-heading">НАВЧАЛЬНА ПРОГРАМА</div>
+      <div id="lesson-nav" class="lesson-nav" aria-label="Уроки курсу"></div>
+      <div class="sidebar-bottom"><div class="mini-label">ТВІЙ ПРОГРЕС</div><strong id="side-count">0 з 7 уроків</strong><button id="reset-progress" class="text-button" type="button">Скинути прогрес</button></div>
+    </aside>
+    <section class="content">
+      <section class="hero">
+        <div class="eyebrow"><span class="dot"></span> ПРАКТИЧНИЙ КУРС · РІВЕНЬ ПОЧАТКІВЕЦЬ</div>
+        <h1>Створи власну<br><span>тему WordPress.</span></h1>
+        <p class="hero-copy">Від структури PHP-файлів до динамічного сайту з ACF. Навчайся на прикладах із цього репозиторію та закріплюй знання практикою.</p>
+        <div class="hero-meta"><span>◷ 3–5 годин</span><span>▤ 7 модулів</span><span>✓ Фінальний тест</span></div>
+        <a class="primary-button" href="#lesson-area">Почати навчання <span>↓</span></a>
+      </section>
+      <div class="notice"><strong>Як працювати з курсом</strong><span>Проходь модулі по черзі, відповідай на запитання та виконуй практичні завдання. Прогрес зберігається у цьому браузері.</span></div>
+      <article id="lesson-area" class="lesson-card" aria-live="polite"></article>
+      <section class="course-footer"><span>WORDPRESS LEARNING PATH</span><a href="https://github.com/UlichIgor/WordPress/tree/main" target="_blank" rel="noreferrer">Переглянути вихідний код ↗</a></section>
+    </section>
+  </main>
+</body>
+</html>
