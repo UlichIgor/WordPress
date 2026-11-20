@@ -1,123 +1,38 @@
 <?php get_header(); ?>
-<!-- Подключает файл шаблона header.php (шапку сайта) -->
+<main id="main-content" class="site-main">
+  <div class="container">
+    <?php if ( is_home() && ! is_front_page() ) : ?>
+      <header class="page-heading"><h1><?php single_post_title(); ?></h1></header>
+    <?php endif; ?>
 
-<main class="main">
-    <div class="container">
-        <div class="main-title">
-            <?php the_field('main-title') ?>
-            <!-- Выводит значение пользовательского поля 'main-title' из ACF -->
-        </div>
-        <div class="main__text">
-            <?php the_field('main__text') ?>
-            <!-- Выводит значение пользовательского поля 'main__text' из ACF -->
-        </div>
-        <div class="main__img">
-            <img src="<?php bloginfo('template_url'); ?>/assets/images/opilcki-logo.png" alt="photo">
-            <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-        </div>
-        <div class="project">
-            <div class="project__title">
-                ПРОЕКТЫ ДОМОВ ИЗ БРУСА
+    <?php if ( have_posts() ) : ?>
+      <div class="post-grid">
+        <?php while ( have_posts() ) : the_post(); ?>
+          <article <?php post_class( 'post-card' ); ?>>
+            <?php if ( has_post_thumbnail() ) : ?>
+              <a class="post-card__image" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+                <?php the_post_thumbnail( 'wordpress-learning-card' ); ?>
+              </a>
+            <?php endif; ?>
+            <div class="post-card__body">
+              <p class="post-card__meta"><?php echo esc_html( get_the_date() ); ?></p>
+              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <div class="post-card__excerpt"><?php the_excerpt(); ?></div>
+              <a class="text-link" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Читати далі', 'wordpress-learning-theme' ); ?> →</a>
             </div>
-            <div class="project__item">
-                <div class="project__name">
-                    ДОМ #1
-                </div>
-                <div class="project__size">
-                    Размер дома: 6 x 6
-                </div>
-                <div class="project__area">
-                    Общая площадь дома: 54 кв. м
-                </div>
-                <div class="project__price">
-                    Стоимость - 402 000 рублей
-                </div>
-                <div class="project__images">
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home1.jpg" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home1-drawing.png" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                </div>
-            </div>
-            <div class="project__item">
-                <div class="project__name">
-                    ДОМ #2
-                </div>
-                <div class="project__size">
-                    Размер дома: 6 x 7,5
-                </div>
-                <div class="project__area">
-                    Общая площадь дома: 72 кв. м
-                </div>
-                <div class="project__price">
-                    Стоимость - 457 000 рублей
-                </div>
-                <div class="project__images">
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home2.jpg" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home2-drawing.png" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                </div>
-            </div>
-            <div class="project__item">
-                <div class="project__name">
-                    ДОМ #3
-                </div>
-                <div class="project__size">
-                    Размер дома: 8 х 7,5
-                </div>
-                <div class="project__area">
-                    Общая площадь дома: 92 кв. м
-                </div>
-                <div class="project__price">
-                    Стоимость - 635 000 рублей
-                </div>
-                <div class="project__images">
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home3.jpg" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                    <div class="project__images-item">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/home3-drawing.png" alt="photo">
-                        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="download">
-        <img src="<?php bloginfo('template_url'); ?>/assets/images/home-catalog.png" alt="photo">
-        <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-        <a href="#">СКАЧАТЬ ВЕСЬ КАТАЛОГ ДОМОВ</a>
-    </div>
-    <div class="container">
-        <div class="gallery">
-            <div class="gallery__title">
-                <?php the_field('gallery__title') ?>
-                <!-- Выводит значение пользовательского поля 'gallery__title' -->
-            </div>
-            <div class="gallery__text">
-                <?php the_field('gallery__text') ?>
-                <!-- Выводит значение пользовательского поля 'gallery__text' -->
-            </div>
-            <div class="gallery__inner">
-                <?php the_field('gallery__inner') ?>
-                <!-- Выводит значение пользовательского поля 'gallery__inner' -->
-            </div>
-            <div class="main__img">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/opilcki-logo.png" alt="photo">
-                <!-- Выводит URL директории шаблона и добавляет путь к изображению -->
-            </div>
-        </div>
-    </div>
+          </article>
+        <?php endwhile; ?>
+      </div>
+      <nav class="pagination" aria-label="<?php esc_attr_e( 'Сторінки записів', 'wordpress-learning-theme' ); ?>">
+        <?php the_posts_pagination( array( 'mid_size' => 2, 'prev_text' => '← ' . __( 'Назад', 'wordpress-learning-theme' ), 'next_text' => __( 'Далі', 'wordpress-learning-theme' ) . ' →' ) ); ?>
+      </nav>
+    <?php else : ?>
+      <section class="empty-state">
+        <h1><?php esc_html_e( 'Поки що немає записів', 'wordpress-learning-theme' ); ?></h1>
+        <p><?php esc_html_e( 'Додайте перший запис в адмін-панелі WordPress або змініть умови пошуку.', 'wordpress-learning-theme' ); ?></p>
+        <?php get_search_form(); ?>
+      </section>
+    <?php endif; ?>
+  </div>
 </main>
-<!-- Подключение футера сайта -->
 <?php get_footer(); ?>
