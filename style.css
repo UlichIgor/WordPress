@@ -1,38 +1,40 @@
-/*
-Theme Name: WordPress Learning Theme
-Author: Ulych Igor
-Description: Навчальна тема каталогу будинків
-Version: 1.0.0
-Text Domain: wordpress-learning-theme
-*/
-:root{--theme-text:#252b34;--theme-accent:#a66a36;--theme-bg:#f7f5f1}
+/* WordPress Learning Theme — responsive, accessible starter styles */
+:root{--theme-text:#252b34;--theme-muted:#68717d;--theme-accent:#98602f;--theme-accent-dark:#75451f;--theme-bg:#f7f5f1;--theme-surface:#fff;--theme-line:#e4e0d9;--theme-radius:16px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--theme-text);font-family:Roboto,Arial,sans-serif;line-height:1.6}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;color:var(--theme-text);background:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}
 img{display:block;max-width:100%;height:auto}
-a{color:inherit}
+a{color:var(--theme-accent);text-underline-offset:3px}
+a:hover{color:var(--theme-accent-dark)}
+button,input{font:inherit}
 .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
-.header{background-position:center;background-size:cover;padding:64px 20px;color:#fff}
-.header__inner{width:min(1160px,100%);margin:auto;display:grid;justify-items:start;gap:16px}
-.header__inner>img{max-width:180px}
-.header__name,.header__title{font-family:Lato,Arial,sans-serif;font-weight:700}
-.header__title{font-size:clamp(28px,5vw,54px);max-width:760px}
-.phone{font-weight:700;text-decoration:none}
-.main{padding:48px 0}
-.main-title{font-size:clamp(28px,4vw,46px);font-weight:700}
-.main__text,.gallery__text{max-width:760px;color:#606873}
-.main__img{margin:24px 0}
-.main__img img{max-height:420px;object-fit:cover}
-.project__title,.gallery__title{font-size:clamp(24px,3vw,36px);font-weight:700;margin:30px 0 20px}
-.project__item{padding:24px 0;border-bottom:1px solid #dedbd5}
-.project__name{font-size:22px;font-weight:700}
-.project__size,.project__area,.project__price{margin-top:5px}
-.project__images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
-.project__images-item img{width:100%;height:280px;object-fit:cover}
-.download{padding:40px 20px;background:var(--theme-bg);display:grid;justify-items:center;gap:20px;text-align:center}
-.download img{max-width:420px}
-.download a{display:inline-block;padding:13px 20px;background:var(--theme-accent);color:#fff;text-decoration:none;font-weight:700}
-.gallery{padding:32px 0}
-.footer{padding:34px 20px;background:#202832;color:#fff}
-.footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:640px){.container{width:min(100% - 28px,1160px)}.header{padding:42px 16px}.main{padding:28px 0}.project__images{grid-template-columns:1fr}.project__images-item img{height:auto}.footer .container{display:grid}}
+.screen-reader-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:#fff;padding:10px 14px;border:2px solid var(--theme-accent);border-radius:8px}
+.skip-link:focus{top:12px}
+.site-header{position:relative;z-index:10;background:#fff;border-bottom:1px solid var(--theme-line)}
+.site-header__inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-branding{min-width:0}.site-title{font-size:22px;font-weight:800;color:var(--theme-text);text-decoration:none}.site-description{margin:2px 0 0;color:var(--theme-muted);font-size:13px}
+.custom-logo{max-height:64px;width:auto}
+.primary-navigation ul,.site-footer nav ul{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0}
+.primary-navigation a,.site-footer nav a{color:inherit;text-decoration:none;font-size:14px;font-weight:650}
+.primary-navigation a:hover,.primary-navigation .current-menu-item>a{color:var(--theme-accent)}
+.menu-toggle{display:none;border:1px solid var(--theme-line);background:#fff;border-radius:9px;padding:8px 12px;cursor:pointer}
+.hero{background-color:#333;background-position:center;background-size:cover;color:#fff;padding:clamp(65px,10vw,130px) 0}
+.hero__inner{max-width:1160px}.hero__eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:700}.hero h1{max-width:780px;margin:10px 0;font-size:clamp(36px,6vw,68px);line-height:1.08;letter-spacing:-.04em}.hero p{max-width:640px;font-size:18px;color:#f0f0f0}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;font-weight:700;text-decoration:none;border:0;cursor:pointer}.button--primary{background:var(--theme-accent);color:#fff}.button--light{background:#fff;color:#272727}
+.site-main{padding:clamp(38px,6vw,76px) 0;min-height:48vh}
+.page-heading{margin:0 0 28px}.page-heading h1{font-size:clamp(30px,4vw,46px);line-height:1.15;letter-spacing:-.03em;margin:0 0 12px}.archive-description{color:var(--theme-muted)}
+.post-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.post-card,.content-card{background:var(--theme-surface);border:1px solid var(--theme-line);border-radius:var(--theme-radius);overflow:hidden}
+.post-card__image img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.post-card__body{padding:22px}.post-card h2{font-size:21px;line-height:1.3;margin:7px 0 10px}.post-card h2 a{color:var(--theme-text);text-decoration:none}.post-card__meta{color:var(--theme-muted);font-size:12px;margin:0}
+.post-card__excerpt{color:var(--theme-muted);font-size:14px}.text-link{display:inline-block;margin-top:8px;font-weight:700;text-decoration:none}
+.content-layout{max-width:900px}.content-card{padding:clamp(22px,5vw,48px)}.featured-image{margin:24px 0}.featured-image img{width:100%;border-radius:12px}.entry-content{font-size:17px}.entry-content h2,.entry-content h3{line-height:1.25;margin-top:1.8em}.entry-content img{border-radius:10px}.entry-content blockquote{margin:24px 0;padding:12px 22px;border-left:4px solid var(--theme-accent);background:var(--theme-bg)}
+.pagination,.post-navigation{margin-top:32px}.pagination .nav-links{display:flex;gap:10px;flex-wrap:wrap}.page-numbers{padding:8px 12px;border:1px solid var(--theme-line);border-radius:8px;text-decoration:none}.page-numbers.current{background:var(--theme-accent);color:#fff}
+.empty-state{max-width:680px;margin:40px auto;text-align:center;padding:clamp(28px,5vw,60px);background:var(--theme-bg);border-radius:var(--theme-radius)}.error-code{font-size:clamp(64px,12vw,120px);font-weight:900;line-height:1;margin:0;color:var(--theme-accent)}
+.search-form{display:flex;gap:8px;justify-content:center;margin:20px 0}.search-form label{flex:1;max-width:420px}.search-field{width:100%;padding:11px 13px;border:1px solid var(--theme-line);border-radius:8px}.search-submit{border:0;background:var(--theme-accent);color:#fff;border-radius:8px;padding:10px 16px;cursor:pointer}
+.comments-area{margin-top:36px;padding-top:28px;border-top:1px solid var(--theme-line)}.comment-list{padding-left:22px}.comment-body{margin:16px 0;padding:16px;background:var(--theme-bg);border-radius:10px}.comment-respond input[type=text],.comment-respond input[type=email],.comment-respond textarea{width:100%;max-width:100%;padding:10px;border:1px solid var(--theme-line);border-radius:8px}.comment-respond label{display:block;margin:10px 0 5px}
+.site-footer{background:#202832;color:#fff;padding:38px 0}.site-footer__inner{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;flex-wrap:wrap}.site-footer p{color:#c5cbd2;font-size:13px}.site-footer__contacts{display:grid;gap:6px}.site-footer__contacts a{color:#fff;text-decoration:none}
+@media(max-width:900px){.post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.container{width:min(100% - 28px,1160px)}.site-header__inner{min-height:70px;flex-wrap:wrap}.menu-toggle{display:block;margin-left:auto}.primary-navigation{display:none;flex-basis:100%;padding:0 0 18px}.primary-navigation.is-open{display:block}.primary-navigation ul{display:grid;gap:0}.primary-navigation li a{display:block;padding:10px 0;border-top:1px solid var(--theme-line)}.post-grid{grid-template-columns:1fr}.hero p{font-size:16px}.search-form{flex-direction:column}.search-form label{max-width:none}.site-footer__inner{display:grid}.content-card{padding:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
