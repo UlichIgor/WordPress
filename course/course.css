@@ -8,3 +8,11 @@
 .exam-result{margin-top:20px;color:var(--muted);font-size:13px}
 .exam-result h3{color:var(--green)}
 .exam-result li{margin:8px 0}
+
+.interactive-lab{margin:28px 0;padding:20px;background:#102238;border:1px solid #36506f;border-radius:14px}
+.interactive-lab h3{margin:0 0 8px!important;color:#b8d2ff}
+.interactive-lab p,.interactive-lab label{color:#c0cce0;font-size:13px}
+.interactive-lab select,.interactive-lab input{display:block;width:100%;max-width:460px;margin:8px 0 14px;padding:10px;border:1px solid #405572;border-radius:8px;background:#0b1727;color:#fff}
+.lab-result{margin-top:14px;padding:14px;background:#0b1727;border-radius:9px;color:#a9e5cc;font-size:13px;overflow-wrap:anywhere}
+.lab-result code{display:block;margin-top:8px;color:#dce9ff}
+.small-note{font-size:11px!important;color:#94a8c3!important}
